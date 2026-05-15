@@ -29,7 +29,6 @@ export class User {
     enum: Role,
     default: Role.STUDENT,
   })
-<<<<<<< HEAD
   role!: Role;
 
   @Column()
@@ -38,13 +37,3 @@ export class User {
   @Column()
   securityAnswerHash!: string;
 }
-=======
-  role: Role;
-
-  @Column()
-  securityQuestion: string;
-
-  @Column()
-  securityAnswerHash: string;
-}
->>>>>>> 60fffa5396cee033878de23c2ff7c5139efa9c94
