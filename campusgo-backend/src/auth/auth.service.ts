@@ -1,4 +1,5 @@
 import { RegisterDto } from './dto/register.dto';
+<<<<<<< HEAD
 import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import bcrypt from 'bcryptjs';
@@ -11,6 +12,15 @@ export class AuthService {
     private usersService: UsersService,
     private jwtService: JwtService
   ) {}
+=======
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { UsersService } from '../users/users.service';
+import bcrypt from 'bcryptjs';
+
+@Injectable()
+export class AuthService {
+  constructor(private usersService: UsersService) {}
+>>>>>>> 7191faa80fcefb2a7eb2bfca9166818f9accc823
 
   async register(registerDto: RegisterDto) {
     const existingUser = await this.usersService.findByEmail(registerDto.email);
@@ -36,6 +46,7 @@ export class AuthService {
       user,
     };
   }
+<<<<<<< HEAD
   async login(loginDto: LoginDto) {
   const user =
     await this.usersService.findByEmail(
@@ -77,4 +88,6 @@ export class AuthService {
     accessToken,
   };
 }
+=======
+>>>>>>> 7191faa80fcefb2a7eb2bfca9166818f9accc823
 }
